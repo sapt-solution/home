@@ -1,1 +1,1 @@
-Coming soon!
+<img src="Home.png"/>
