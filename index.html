@@ -4,17 +4,55 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="HandheldFriendly" content="true">
 <head>
-    <title>Sapt</title>
+    <title>Responsive Background Example</title>
 </head>
 <style>
 
-@media only screen and (max-width: 600px) {
-
-    img {width: 100%; height: 100%; margin: 0; padding; 0;}
+/* Average phones (320px - 480px) */
+@media only screen and (min-width: 20em) {
+     body {
+          background:url(Home-mobile.gif);
+          background-repeat: no-repeat;
+        }
 }
-  </style>
+
+/* Small devices such as large phones (640px and up) */
+@media only screen and (min-width: 40em) {
+    body {
+          background:url(Home.gif);
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+}
+
+/* Medium devices such as tablets (768px and up) */
+@media only screen and (min-width: 48em) {
+    body {
+          background:url(Home.gif);
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+}
+
+/* Large devices such as laptops (1024px and up) */
+@media only screen and (min-width: 64em)  {
+    body {
+      background:url(Home.gif);
+      background-size: cover;
+    }
+}
+
+/* Largest devices such as desktops (1280px and up) */
+@media only screen and (min-width: 80em) {
+    body {
+      background:url(Home.gif);
+      background-size: cover;
+
+    }
+}
+
+</style>
 
 <body>
-<img src="Home.png"/>
 </body>
 </html>
