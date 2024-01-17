@@ -7,4 +7,18 @@
     font-weight: 300;
     src: url('./src/fonts/Jost-VariableFont_wght.ttf') format('truetype');
   }
+
+  @font-face {
+    font-family: 'Jost-600';
+    font-style: normal;
+    font-weight: 600;
+    src: url('./src/fonts/Jost-VariableFont_wght.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'RammettoOne';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./src/fonts/RammettoOne-Regular.ttf') format('truetype');
+  }
   
