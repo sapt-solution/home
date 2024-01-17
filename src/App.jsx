@@ -9,15 +9,15 @@ import './../fonts.css';
 
 const App = () => {
   return (
-    <Container maxWidth="xl" style={{ height: '100vh', backgroundColor: '#E9E6E2', paddingTop: '2%'}}>
+    <Container maxWidth="xl" style={{ height: '100vh', backgroundColor: '#E9E6E2', paddingTop: '2%' }}>
       <Router>
-      <Header/>
+        <Header />
         <Routes>
-            <Route path="/" exact element={<Home />} />
-            <Route path="/about" exact element={<About/>} />
-            {/* <Route path="/services" component={Services} />
+          <Route path="/" exact element={<Home />} />
+          <Route path="/about" exact element={<About />} />
+          {/* <Route path="/services" component={Services} />
             <Route path="/contact" component={Contact} /> */}
-          </Routes>
+        </Routes>
       </Router>
     </Container>
   );
