@@ -5,7 +5,7 @@ import Link from '@mui/material/Link';
 const Header = () => {
   return (
     <>
-      <Grid container spacing={2}>
+      <Grid container spacing={2} sx = {{  backgroundColor: '#E9E6E2', paddingTop: '2%'}}>
         <Grid item xs={1} />
         <Grid item xs={1} />
         <Grid item xs={4}>

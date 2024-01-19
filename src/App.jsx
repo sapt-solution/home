@@ -9,8 +9,7 @@ import './../fonts.css';
 
 const App = () => {
   return (
-    <Container maxWidth="xl" style={{ height: '100vh', backgroundColor: '#E9E6E2', paddingTop: '2%' }}>
-      <Router>
+    <Router>
         <Header />
         <Routes>
           <Route path="/" exact element={<Home />} />
@@ -19,7 +18,6 @@ const App = () => {
             <Route path="/contact" component={Contact} /> */}
         </Routes>
       </Router>
-    </Container>
   );
 };
 
