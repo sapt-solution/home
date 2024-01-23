@@ -39,24 +39,24 @@ const Footer = () => {
                 <Grid item md={1}></Grid>
                     <Grid item md={4}>
 
-                    <Typography sx={{ color: '#1B1B1B', fontSize: '0.75em', fontFamily: 'RammettoOne', width: '100%', textAlign: 'center', textAlignLast: 'justify' }}>
+                    <Typography sx={{ p:'0 1', color: '#1B1B1B', fontSize: '0.75em', fontFamily: 'RammettoOne', width: '100%', textAlign: 'center', textAlignLast: 'justify' }}>
                     We pride ourselves on our extensive <br/> 
                     </Typography>
-                    <Typography sx={{ color: '#1B1B1B', fontSize: '0.75em', fontFamily: 'RammettoOne', width: '100%', textAlign: 'center', textAlignLast: 'justify' }}>
+                    <Typography sx={{ p:'0 1', color: '#1B1B1B', fontSize: '0.75em', fontFamily: 'RammettoOne', width: '100%', textAlign: 'center', textAlignLast: 'justify' }}>
                     experience with leading industry technologies  <br/> 
                     </Typography>
-                    <Typography sx={{ color: '#1B1B1B', fontSize: '0.75em', fontFamily: 'RammettoOne', width: '100%', wordSpacing: '12px'}}>
+                    <Typography sx={{ p:'0 1', color: '#1B1B1B', fontSize: '0.75em', fontFamily: 'RammettoOne', width: '100%', wordSpacing: '12px'}}>
                     like unreal engine and unity
                     </Typography>
 
                     
                     </Grid>
                     <Grid item md={2} sx={{display: 'flex', alignItems: 'center', flexDirection: 'column'}}>
-                        <Typography sx={{ color: '#4D69FF'}}> Ahmedabad, India </Typography>
-                        <Typography sx={{ color: '#4D69FF'}}> Toronto, Canada </Typography>
+                        <Typography sx={{ color: '#4D69FF', fontSize: '0.90em', m: 1, fontFamily: 'Jost-400'}}> Ahmedabad, India </Typography>
+                        <Typography sx={{ color: '#4D69FF', fontSize: '0.90em', fontFamily: 'Jost-400'}}> Toronto, Canada </Typography>
                     </Grid>
                     <Grid item md={2} sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
-                        <Typography sx={{ color: '#4D69FF'}}> saptservices@gmail.com </Typography>
+                        <Typography sx={{ color: '#4D69FF', fontSize: '0.90em', fontFamily: 'Jost-400'}}> saptservices@gmail.com </Typography>
                     </Grid>
                     <Grid item md={2} sx={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
                         <Box>
@@ -77,6 +77,18 @@ const Footer = () => {
                     </Grid>
                     <Grid item md={1}> </Grid>
                 </Grid>
+
+                <Box height={50} />
+
+                <Grid container sx={{ display: 'flex', flexDirection: 'row', mt: '1%' }}>
+                    <Grid item md={1}/>
+                    <Grid item md={4} sx={{fontSize: '0.70em', fontFamily: 'Jost', letterSpacing: '3%'}}>
+                    COPYRIGHT © 2024 SAPT SOLUTIONS
+                    </Grid>
+                    <Grid item md={7}/>
+                </Grid>
+
+                <Box height={20}/>
             </Box>
         </>
     )
