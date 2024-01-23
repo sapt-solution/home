@@ -151,7 +151,7 @@ const Home = () => {
 
           <Box sx={{ display: 'flex', justifyContent: 'center' }}>
             <>
-              <Button variant="contained" sx={{ mt: '1%', backgroundColor: '#4D69FF', color: 'white', borderRadius: '30px' }}> Get in Touch </Button>
+              <Button variant="contained" sx={{ mt: '1%', backgroundColor: '#4D69FF', color: 'white', borderRadius: '30px', fontSize: '0.7em', fontFamily: 'Jost-600', width: '150px', height: '40px' }}> Get in Touch </Button>
             </>
           </Box>
 

@@ -24,13 +24,13 @@ const Footer = () => {
                 <Grid container sx={{ display: 'flex', flexDirection: 'row', mt: '1%' }}>
                     <Grid item md={5}></Grid>
                     <Grid item md={2} sx={{display: 'flex', justifyContent: 'center'}}>
-                        <Typography> Location </Typography>
+                        <Typography sx={{fontSize: '1em', fontFamily: 'Jost-700'}}> Location </Typography>
                     </Grid>
                     <Grid item md={2} sx={{display: 'flex', justifyContent: 'center'}}>
-                    <Typography> Contact us </Typography>
+                    <Typography sx={{fontSize: '1em', fontFamily: 'Jost-700'}}> Contact us </Typography>
                     </Grid>
                     <Grid item md={2} sx={{display: 'flex', justifyContent: 'center'}}>
-                    <Typography> Follow us </Typography>
+                    <Typography sx={{fontSize: '1em', fontFamily: 'Jost-700'}}> Follow us </Typography>
                     </Grid>
                     <Grid item md={1}> </Grid>
                 </Grid>
@@ -52,13 +52,13 @@ const Footer = () => {
                     
                     </Grid>
                     <Grid item md={2} sx={{display: 'flex', alignItems: 'center', flexDirection: 'column'}}>
-                        <Typography sx={{ color: '#4D69FF', fontSize: '0.90em', m: 1, fontFamily: 'Jost-400'}}> Ahmedabad, India </Typography>
-                        <Typography sx={{ color: '#4D69FF', fontSize: '0.90em', fontFamily: 'Jost-400'}}> Toronto, Canada </Typography>
+                        <Typography sx={{ color: '#4D69FF', fontSize: '0.90em', fontFamily: 'Jost-400'}}> Ahmedabad, India </Typography>
+                        <Typography sx={{ color: '#4D69FF', fontSize: '0.90em', m: 1, fontFamily: 'Jost-400'}}> Toronto, Canada </Typography>
                     </Grid>
-                    <Grid item md={2} sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+                    <Grid item md={2} sx={{display: 'flex', flexDirection: 'column',  alignItems: 'center'}}>
                         <Typography sx={{ color: '#4D69FF', fontSize: '0.90em', fontFamily: 'Jost-400'}}> saptservices@gmail.com </Typography>
                     </Grid>
-                    <Grid item md={2} sx={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
+                    <Grid item md={2} sx={{display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
                         <Box>
                         <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
                             <img src="../../assets/facebook.svg" alt="Map" />

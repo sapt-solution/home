@@ -16,6 +16,13 @@
 }
 
 @font-face {
+  font-family: 'Jost-700';
+  font-style: normal;
+  font-weight: 600;
+  src: url('./src/fonts/Jost-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
   font-family: 'Jost-500';
   font-style: normal;
   font-weight: 500;
