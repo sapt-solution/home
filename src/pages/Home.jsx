@@ -158,10 +158,6 @@ const Home = () => {
         </Grid>
         <Grid item md={2} />
       </Grid>
-
-      <Box height={20} />
-
-
     </>
   );
 };
