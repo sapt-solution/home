@@ -6,8 +6,7 @@ const Header = () => {
   return (
     <>
       <Grid container spacing={2} sx = {{  backgroundColor: '#E9E6E2', paddingTop: '2%'}}>
-        <Grid item xs={1} />
-        <Grid item xs={1} />
+        <Grid item xs={1.5} />
         <Grid item xs={3} sx={{ display: 'flex', justifyContent: 'start'}}>
           <Box sx={{ display: 'flex' }}>
             <img src="../../assets/logo.svg" alt="Sapt Logo" />
@@ -33,7 +32,7 @@ const Header = () => {
             <Typography sx={{ color: '#FFFFFF', fontSize: { sm: '1.0rem', md: '1.0rem', lg: '1.2rem' }, fontFamily: 'Jost' }}>Contact Us</Typography>
           </List>
         </Grid>
-        <Grid item xs={1} />
+        <Grid item xs={1.5} />
       </Grid>
     </>
   );

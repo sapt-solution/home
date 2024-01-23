@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Typography, Box, Container } from '@mui/material';
+import { Grid, Typography, Box, Paper, useTheme, Button } from '@mui/material';
 
 const arrowIconStyle = {
   position: 'absolute',
@@ -22,17 +22,17 @@ const ArrowIcon = () => {
 };
 
 const Home = () => {
+  const theme = useTheme();
   return (
     <>
       <div style={{ position: 'relative' }}>
         <Box height={150} style={{ backgroundColor: '#E9E6E2' }} />
-        <Grid container spacing={2} direction="row" sx={{ backgroundColor: '#E9E6E2' }}>
-          <Grid item md={1} />
-          <Grid item md={1} />
-          <Grid item lg = {3} md={2} sx={{ display: 'flex', justifyContent: 'center'}}>
-            <Typography sx={{ color: '#1B1B1B', fontSize: { sm: '6rem', md: '5rem', lg: '7rem' }, fontFamily: 'RammettoOne', lineHeight: '1em' }}> WE </Typography>
+        <Grid container spacing={2} direction="row" justifyContent={'space-between'} sx={{ backgroundColor: '#E9E6E2' }}>
+          <Grid item md={1.5} />
+          <Grid item lg={2} md={2} sx={{ display: 'flex', justifyContent: 'center', marginLeft: '5%' }}>
+            <Typography sx={{ color: '#1B1B1B', fontSize: { sm: '6rem', md: '5rem', lg: '6rem' }, fontFamily: 'RammettoOne', lineHeight: '1em' }}> WE </Typography>
           </Grid>
-          <Grid item md={1} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly'}}>
+          <Grid item md={1} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-evenly' }}>
             <Typography sx={{ color: '#4D69FF', fontSize: { sm: '1.2rem', md: '1.1rem', lg: '1.2rem' }, fontFamily: 'Jost-600' }}> Design </Typography>
             <Typography sx={{ color: '#4D69FF', fontSize: { sm: '1.2rem', md: '1.1rem', lg: '1.2rem' }, fontFamily: 'Jost-600' }}> Develop </Typography>
             <Typography sx={{ color: '#4D69FF', fontSize: { sm: '1.2rem', md: '1.1rem', lg: '1.2rem' }, fontFamily: 'Jost-600' }}> Code </Typography>
@@ -49,7 +49,7 @@ const Home = () => {
               <Typography variant={"div"} sx={{ color: '#4D69FF', fontSize: { sm: '1.5em', md: '1.5em', lg: '1.5em' }, display: 'inline', fontFamily: 'RammettoOne' }}> . </Typography>
             </Typography>
           </Grid>
-          <Grid item md={1} />
+          <Grid item md={1.5} />
         </Grid>
         <Box height={250} style={{ backgroundColor: '#E9E6E2' }} />
         <ArrowIcon />
@@ -59,7 +59,7 @@ const Home = () => {
       <Grid container sx={{ display: 'flex', flexDirection: 'row' }}>
         <Grid item md={1} />
         <Grid item md={10}>
-          <Typography sx={{ color: '#1B1B1B', fontSize: '1.125em', fontFamily: 'Jost-500', textAlign: 'center' }}>
+          <Typography sx={{ color: '#1B1B1B', fontSize: '1.125em', fontFamily: 'Jost-400', textAlign: 'center', fontWeight: 'bold' }}>
             <Typography sx={{ color: '#4D69FF', fontSize: '1.6em', display: 'inline', fontFamily: 'RammettoOne' }}> . </Typography> &nbsp; What &nbsp; you &nbsp;  can &nbsp; expect &nbsp;
             <Typography sx={{ color: '#4D69FF', fontSize: '1.6em', display: 'inline', fontFamily: 'RammettoOne' }}> . </Typography>
           </Typography>
@@ -85,13 +85,81 @@ const Home = () => {
       <Grid container sx={{ display: 'flex', flexDirection: 'row' }}>
         <Grid item md={1} />
         <Grid item md={10}>
-          <Typography sx={{ color: '#1B1B1B', fontSize: '1.125em', fontFamily: 'Jost-500', textAlign: 'center' }}>
+          <Typography sx={{ color: '#1B1B1B', fontSize: '1.125em', fontFamily: 'Jost-400', textAlign: 'center', fontWeight: 'bold' }}>
             <Typography sx={{ color: '#4D69FF', fontSize: '1.6em', display: 'inline', fontFamily: 'RammettoOne' }}> . </Typography> &nbsp; Where &nbsp; we &nbsp; can &nbsp; help &nbsp; you &nbsp;
             <Typography sx={{ color: '#4D69FF', fontSize: '1.6em', display: 'inline', fontFamily: 'RammettoOne' }}> . </Typography>
           </Typography>
         </Grid>
         <Grid item md={1} />
       </Grid>
+
+
+      <Grid container sx={{ display: 'flex', flexDirection: 'row', marginTop: '1%' }}>
+        <Grid item md={2} />
+        <Grid item md={8}>
+          <Paper
+            elevation={3}
+            style={{
+              borderRadius: 10, // Adjust this value for the desired border radius
+              margin: 'auto', // Center the rectangle
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              backgroundColor: '#E9E6E2',
+              padding: theme.spacing(2), // Add padding for better responsiveness
+              boxShadow: '4px 0px 8px rgba(0, 0, 0, 0.5)'
+            }}
+          >
+            <Typography sx={{ color: '#1B1B1B', fontSize: '3em', fontFamily: 'RammettoOne', width: '100%', textAlign: 'center' }}>
+              FROM 'EUREKA' MOMENTS <br />
+              TO INTERFACES: YOUR <br />
+              FUTURE, OUR CODE
+            </Typography>
+
+          </Paper>
+        </Grid>
+        <Grid item md={2} />
+      </Grid>
+
+      <Box height={60} />
+
+      <Grid container sx={{ display: 'flex', flexDirection: 'row', marginTop: '1%' }}>
+        <Grid item md={2} />
+        <Grid item md={8}>
+          <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+            <img src="../../assets/phone.svg" alt="Phone Logo" />
+          </Box>
+          <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+            <>
+              <Typography sx={{ color: '#1B1B1B', fontSize: '1.125em', fontFamily: 'Jost-400', textAlign: 'center', letterSpacing: '2px', fontWeight: 'bold' }}>
+                <Typography sx={{ color: '#4D69FF', fontSize: '1.6em', display: 'inline', fontFamily: 'RammettoOne' }}> . </Typography>
+                &nbsp; Let's &nbsp; collaborate &nbsp;
+                <Typography sx={{ color: '#4D69FF', fontSize: '1.6em', display: 'inline', fontFamily: 'RammettoOne' }}> . </Typography>
+              </Typography>
+            </>
+          </Box>
+
+          <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+            <>
+              <Typography sx={{ mt: '1%', color: '#1B1B1B', fontSize: '1.5em', fontFamily: 'RammettoOne', textAlign: 'center', letterSpacing: '2px', fontWeight: 'bold' }}>
+
+                &nbsp; We &nbsp; Promise &nbsp; No &nbsp; Boring &nbsp; Meetings
+
+              </Typography>
+            </>
+          </Box>
+
+          <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+            <>
+              <Button variant="contained" sx={{ mt: '1%', backgroundColor: '#4D69FF', color: 'white', borderRadius: '30px' }}> Get in Touch </Button>
+            </>
+          </Box>
+
+        </Grid>
+        <Grid item md={2} />
+      </Grid>
+
+      <Box height={20} />
 
 
     </>
