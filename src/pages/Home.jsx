@@ -9,7 +9,7 @@ const Home = () => {
     position: 'absolute',
     bottom: 0,
     left: {xs: '10%', md: '80%'},
-    top: {xs: '30px', md: '70%'},
+    top: {xs: '5%', md: '70%'},
   };
   
   const ArrowIcon = () => {
@@ -20,7 +20,6 @@ const Home = () => {
           <circle cx="14.5" cy="142.5" r="7" fill="#4D69FF" stroke="white" />
           <path d="M4 175.325L14.5 186L25 175.325L23.2351 173.531L15.7478 181.143L15.7478 148L13.252 148L13.252 181.143L5.76487 173.531L4 175.325Z" fill="#4D69FF" />
         </svg>
-  
       </Box>
     );
   };
