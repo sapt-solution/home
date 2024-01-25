@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Typography, Box, Paper, useTheme, Button} from '@mui/material/*';
+import { Grid, Typography, Box, Paper, useTheme, Button} from '@mui/material';
 
 
 const Home = () => {
