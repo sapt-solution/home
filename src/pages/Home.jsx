@@ -1,13 +1,9 @@
 import React from 'react';
-import { Grid, Typography, Box, Paper, useTheme, Button, useMediaQuery} from '@mui/material';
-
-
+import { Grid, Typography, Box, Paper, useTheme, Button} from '@mui/material';
 
 
 const Home = () => {
   const theme = useTheme();
-  //const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
-
 
   const arrowIconStyle = {
     position: 'absolute',
