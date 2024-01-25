@@ -76,10 +76,10 @@ const Header = () => {
             padding: '2% 5%',
           }}
         >
-          <Link href="/" underline="none">
+          <Link href="#" underline="none">
             <Typography sx={{ color: '#FFFFFF', fontSize: '1.2rem', fontFamily: 'Jost' }}>Home</Typography>
           </Link>
-          <Link href="/about" underline="none">
+          <Link href="#/about" underline="none">
             <Typography sx={{ color: '#FFFFFF', fontSize: '1.2rem', fontFamily: 'Jost' }}>About</Typography>
           </Link>
           <Typography sx={{ color: '#FFFFFF', fontSize: '1.2rem', fontFamily: 'Jost' }}>Services</Typography>
