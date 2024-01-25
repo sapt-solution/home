@@ -5,7 +5,7 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 
 const Header = () => {
-  const storedColor = localStorage.getItem('backgroundColor') || '#E9E6E2';
+  const storedColor = sessionStorage.getItem('backgroundColor') || '#E9E6E2';
   const [openDrawer, setOpenDrawer] = useState(false);
   const [backgroundColor, setBackgroundColor] = useState(storedColor);
 
@@ -19,7 +19,7 @@ const Header = () => {
 
   const handleMenuClick = (backgroudColor) => {
     setBackgroundColor(backgroudColor);
-    localStorage.setItem('backgroundColor', backgroudColor);
+    sessionStorage.setItem('backgroundColor', backgroudColor);
   }
   return (
     <>
