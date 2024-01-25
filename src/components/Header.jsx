@@ -28,7 +28,9 @@ const Header = () => {
         <Grid item md={1.5} xs={1} />
         <Grid item md={3} xs={4} sx={{ display: 'flex', justifyContent: 'start'}}>
           <Box sx={{ display: 'flex' }}>
+          <Link href="#" underline="none" onClick={() => handleMenuClick('#E9E6E2')}>
             <img src="../../logo.svg" alt="Sapt Logo" />
+            </Link>
           </Box>
         </Grid>
 
