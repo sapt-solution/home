@@ -10,13 +10,13 @@ const Footer = () => {
                 <Grid container sx={{ display: { xs: 'none', md: 'flex' }, flexDirection: 'row' }}>
                     <Grid item md={5}></Grid>
                     <Grid item md={2} sx={{ display: 'flex', justifyContent: 'center' }}>
-                        <img src="../../home/map.svg" alt="Map" />
+                        <img src="../../map.svg" alt="Map" />
                     </Grid>
                     <Grid item md={2} sx={{ display: 'flex', justifyContent: 'center' }}>
-                        <img src="../../home/contact.svg" alt="Map" />
+                        <img src="../../contact.svg" alt="Map" />
                     </Grid>
                     <Grid item md={2} sx={{ display: 'flex', justifyContent: 'center' }}>
-                        <img src="../../home/announcement.svg" alt="Map" />
+                        <img src="../../announcement.svg" alt="Map" />
                     </Grid>
                     <Grid item md={1}> </Grid>
                 </Grid>
@@ -59,17 +59,17 @@ const Footer = () => {
 
                             <Box>
                             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-                                <img src="../../home/facebook.svg" alt="Map" />
+                                <img src="../../facebook.svg" alt="Map" />
                             </a>
                         </Box>
                         <Box sx={{ ml: 1 }}>
                             <a href="https://www.linkedin.com/company/saptsolutions/about/" target="_blank" rel="noopener noreferrer">
-                                <img src="../../home/linkedIn.svg" alt="Map" />
+                                <img src="../../linkedIn.svg" alt="Map" />
                             </a>
                         </Box>
                         <Box sx={{ ml: 1 }}>
                             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                                <img src="../../home/twitter.svg" alt="Map" />
+                                <img src="../../twitter.svg" alt="Map" />
                             </a>
                         </Box>
                             </Box>
@@ -104,17 +104,17 @@ const Footer = () => {
                     <Grid item md={2} sx={{ display: { xs: 'none', md: 'flex' } , flexDirection: 'row', justifyContent: 'center' }}>
                         <Box>
                             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-                                <img src="../../home/facebook.svg" alt="Map" />
+                                <img src="../../facebook.svg" alt="Map" />
                             </a>
                         </Box>
                         <Box sx={{ ml: 1 }}>
                             <a href="https://www.linkedin.com/company/saptsolutions/about/" target="_blank" rel="noopener noreferrer">
-                                <img src="../../home/linkedIn.svg" alt="Map" />
+                                <img src="../../linkedIn.svg" alt="Map" />
                             </a>
                         </Box>
                         <Box sx={{ ml: 1 }}>
                             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                                <img src="../../home/twitter.svg" alt="Map" />
+                                <img src="../../twitter.svg" alt="Map" />
                             </a>
                         </Box>
                     </Grid>

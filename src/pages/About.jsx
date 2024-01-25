@@ -9,7 +9,7 @@ const About = () => {
       <Grid container>
         <Grid item md={2.5} sx={{display: {xs: 'none', md: 'block'}}} />
         <Grid item md={3} xs={12} sx={{ mr: 2, display: {xs: 'flex', md: 'block'}, justifyContent: 'center' }}>
-          <img src="../../home/hand.svg" alt="Hands" />
+          <img src="../../hand.svg" alt="Hands" />
         </Grid>
         <Grid item md={5} xs={12} sx={{ p: {xs: '5%', md: '0'}}}>
           <Typography sx={{ fontFamily: 'RammettoOne', fontSize: '1.5rem' }}>
@@ -47,7 +47,7 @@ const About = () => {
         </Grid>
         <Grid item md={1} sx={{display: {xs: 'none', md:'block'}}}/>
         <Grid item md={3} xs={12} sx={{display: {xs: 'flex', md: 'block'}, justifyContent: 'center' }} >
-          <img src="../../home/friend.svg" alt="Friend" />
+          <img src="../../friend.svg" alt="Friend" />
         </Grid>
         <Grid item md={2} />
       </Grid>
@@ -63,7 +63,7 @@ const About = () => {
           </Typography>
         </Grid>
         <Grid item md={3} xs={12} sx={{ m: '0 1%', display: {xs: 'none', md: 'flex'} }}>
-          <img src="../../home/weird.svg" alt="Weird" style={{height: '100%', width: '100%'}}/>
+          <img src="../../weird.svg" alt="Weird" style={{height: '100%', width: '100%'}}/>
         </Grid>
         <Grid item md={3} xs={12} sx={{ backgroundColor: "#E9E6E2", height: 'auto', width: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'end', padding: '2%' }}>
 
@@ -187,7 +187,7 @@ const About = () => {
       <Grid container>
         <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'center' }}>
 
-          <img src="../../home/connect.svg" alt="Hands" />
+          <img src="../../connect.svg" alt="Hands" />
         </Grid>
 
       </Grid>
