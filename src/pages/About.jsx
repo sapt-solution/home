@@ -34,8 +34,8 @@ const About = () => {
       <Box sx={{ height: {xs: 'none', md: 30}, backgroundColor: "#E9E6E2" }} />
 
       <Grid container sx={{ backgroundColor: "#E9E6E2", display: 'flex', flexDirection: 'row' }}>
-        <Grid item md={3} />
-        <Grid item md={3} xs={12} sx={{ p: {xs: '5%', md: '0'}}}>
+        <Grid item md={2} />
+        <Grid item md={4} xs={12} sx={{ p: {xs: '5%', md: '0'}}}>
           <Typography sx={{ fontFamily: 'RammettoOne', fontSize: '1.5rem' }}>
             A bit of history
           </Typography>
