@@ -70,7 +70,7 @@ const Header = () => {
       >
         <List
           sx={{
-            width: '20vw',
+            width: '100%',
             height: '100%',
             backgroundColor: '#192021',
             padding: '2% 5%',
