@@ -129,7 +129,7 @@ const Home = () => {
         <Grid item md={2} sx={{display: {xs: 'none', md: 'block'}}} />
         <Grid item md={8} xs={12}>
           <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-            <img src="../../assets/phone.svg" alt="Phone Logo" />
+            <img src="../../phone.svg" alt="Phone Logo" />
           </Box>
           <Box sx={{ display: 'flex', justifyContent: 'center' }}>
             <>

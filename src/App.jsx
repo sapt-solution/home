@@ -1,7 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
-import { Container } from '@mui/material';
 import Header from '../src/components/Header';
 import Footer from '../src/components/Footer';
 import About from './pages/About';

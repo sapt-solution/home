@@ -5,7 +5,7 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 
 const Header = () => {
-  const storedColor = localStorage.getItem('backgroundColor') || 'white';
+  const storedColor = localStorage.getItem('backgroundColor') || '#E9E6E2';
   const [openDrawer, setOpenDrawer] = useState(false);
   const [backgroundColor, setBackgroundColor] = useState(storedColor);
 
@@ -18,6 +18,7 @@ const Header = () => {
   };
 
   const handleMenuClick = (backgroudColor) => {
+    setBackgroundColor(backgroudColor);
     localStorage.setItem('backgroundColor', backgroudColor);
   }
   return (
@@ -26,7 +27,7 @@ const Header = () => {
         <Grid item md={1.5} xs={1} />
         <Grid item md={3} xs={4} sx={{ display: 'flex', justifyContent: 'start'}}>
           <Box sx={{ display: 'flex' }}>
-            <img src="../../assets/logo.svg" alt="Sapt Logo" />
+            <img src="../../logo.svg" alt="Sapt Logo" />
           </Box>
         </Grid>
 
@@ -41,10 +42,10 @@ const Header = () => {
           padding: '2% 5%'
         }}
       >
-        <Link href="/" underline="none" onClick={() => handleMenuClick('#E9E6E2')}>
+        <Link href="#" underline="none" onClick={() => handleMenuClick('#E9E6E2')}>
           <Typography sx={{ color: '#FFFFFF', fontSize: { sm: '1.0rem', md: '1.0rem', lg: '1.2rem' }, fontFamily: 'Jost' }}>Home</Typography>
         </Link>
-        <Link href="/about" underline="none" onClick={() => handleMenuClick('white')}>
+        <Link href="#/about" underline="none" onClick={() => handleMenuClick('white')}>
           <Typography sx={{ color: '#FFFFFF', fontSize: { sm: '1.0rem', md: '1.0rem', lg: '1.2rem' }, fontFamily: 'Jost' }}>About</Typography>
         </Link>
         <Typography sx={{ color: '#FFFFFF', fontSize: { sm: '1.0rem', md: '1.0rem', lg: '1.2rem' }, fontFamily: 'Jost' }}>Services</Typography>
