@@ -1,21 +1,22 @@
 import React from 'react';
-import { Grid, Typography, Box, Paper, useTheme, Button} from '@mui/material';
+import { Grid, Typography, Box, Paper, useTheme, Button, useMediaQuery} from '@mui/material';
 
 
 const Home = () => {
   const theme = useTheme();
+  const isMediumScreen = useMediaQuery((theme) => theme.breakpoints.up('md'));
 
   const arrowIconStyle = {
     position: 'absolute',
     bottom: 0,
-    left: {xs: '10%', md: '80%'},
-    top: {xs: '5%', md: '70%'},
+    left: {xs: '8%', md: '80%'},
+    top: {xs: '80%', md: '70%'}
   };
   
   const ArrowIcon = () => {
     return (
       <Box sx={arrowIconStyle}>
-        <svg width="30" height="218" viewBox="0 0 30 218" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="30" height={isMediumScreen ? '218px' : '120px'} viewBox="0 0 30 218" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect y="218" width="218" height="30" rx="15" transform="rotate(-90 0 218)" fill="#192021" />
           <circle cx="14.5" cy="142.5" r="7" fill="#4D69FF" stroke="white" />
           <path d="M4 175.325L14.5 186L25 175.325L23.2351 173.531L15.7478 181.143L15.7478 148L13.252 148L13.252 181.143L5.76487 173.531L4 175.325Z" fill="#4D69FF" />
@@ -39,13 +40,13 @@ const Home = () => {
             <Typography sx={{ color: '#4D69FF', fontSize: { xs: '1.2rem', md: '1.1rem', lg: '1.2rem' }, fontFamily: 'Jost-600' }}> Code </Typography>
           </Grid>
           <Grid item md={5} xs={12} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly' }}>
-            <Typography sx={{ color: '#1B1B1B', fontSize: { xs: '1.1em', md: '1.1em', lg: '1.4em' }, fontFamily: 'RammettoOne', textAlignLast: {xs: 'center', md: 'justify'} }}>
+            <Typography sx={{ color: '#1B1B1B', fontSize: { xs: '1.0em', md: '1.1em', lg: '1.4em' }, fontFamily: 'RammettoOne', textAlignLast: {xs: 'center', md: 'justify'}, p: '0 2%' }}>
               For companies ranging from
             </Typography>
-            <Typography sx={{ color: '#1B1B1B', fontSize: { xs: '1.1em', md: '1.1em', lg: '1.4em' }, fontFamily: 'RammettoOne', textAlignLast: {xs: 'center', md: 'justify'} }}>
+            <Typography sx={{ color: '#1B1B1B', fontSize: { xs: '1.0em', md: '1.1em', lg: '1.4em' }, fontFamily: 'RammettoOne', textAlignLast:  {xs: 'center', md: 'justify'}, p: '0 2%' }}>
               startups to the most iconic brands
             </Typography>
-            <Typography sx={{ color: '#1B1B1B', fontSize: { xs: '1.1em', md: '1.1em', lg: '1.4em' }, fontFamily: 'RammettoOne', lineHeight: '1.2em', textAlignLast: {xs: 'center', md: 'start'}, wordSpacing: {xs: '0px', md: '10px'}  }}>
+            <Typography sx={{ color: '#1B1B1B', fontSize: { xs: '1.0em', md: '1.1em', lg: '1.4em' }, fontFamily: 'RammettoOne', lineHeight: '1.2em', textAlignLast: {xs: 'center', md: 'start'}, wordSpacing: {xs: '0px', md: '10px'}, p: '0 2%'  }}>
               in the world
               <Typography variant={"div"} sx={{ color: '#4D69FF', fontSize: { xs: '1.5em', md: '1.5em', lg: '1.5em' }, display: 'inline', fontFamily: 'RammettoOne' }}> . </Typography>
             </Typography>

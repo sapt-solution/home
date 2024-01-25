@@ -70,16 +70,16 @@ const Header = () => {
       >
         <List
           sx={{
-            width: '100%',
+            width: '30vw',
             height: '100%',
             backgroundColor: '#192021',
             padding: '2% 5%',
           }}
         >
-          <Link href="#" underline="none">
+          <Link href="#" underline="none" onClick={handleDrawerClose}>
             <Typography sx={{ color: '#FFFFFF', fontSize: '1.2rem', fontFamily: 'Jost' }}>Home</Typography>
           </Link>
-          <Link href="#/about" underline="none">
+          <Link href="#/about" underline="none" onClick={handleDrawerClose}>
             <Typography sx={{ color: '#FFFFFF', fontSize: '1.2rem', fontFamily: 'Jost' }}>About</Typography>
           </Link>
           <Typography sx={{ color: '#FFFFFF', fontSize: '1.2rem', fontFamily: 'Jost' }}>Services</Typography>
