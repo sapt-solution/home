@@ -13,7 +13,7 @@ const Home = () => {
     position: 'absolute',
     bottom: 0,
     left: {xs: '10%', md: '80%'},
-    top: {xs: '10%', md: '70%'},
+    top: {xs: '30px', md: '70%'},
   };
   
   const ArrowIcon = () => {
