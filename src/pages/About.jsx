@@ -7,8 +7,8 @@ const About = () => {
     <>
       <Box sx={{ height: { xs: 30, md: 150 } }} />
       <Grid container>
-        <Grid item md={2.5} sx={{display: {xs: 'none', md: 'block'}}} />
-        <Grid item md={3} xs={12} sx={{ mr: 2, display: {xs: 'flex', md: 'block'}, justifyContent: 'center' }}>
+        <Grid item md={1.5} sx={{display: {xs: 'none', md: 'block'}}} />
+        <Grid item md={4} xs={12} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
           <img src="../../hand.svg" alt="Hands" />
         </Grid>
         <Grid item md={5} xs={12} sx={{ p: {xs: '5%', md: '0'}}}>
