@@ -25,7 +25,7 @@ const Header = () => {
   return (
     <>
       <Grid container spacing={2} sx = {{  backgroundColor: backgroundColor, paddingTop: '2%'}}>
-        <Grid item md={1.5} xs={1} />
+        <Grid item md={1.5} xs={0.5} />
         <Grid item md={3} xs={4} sx={{ display: 'flex', justifyContent: 'start'}}>
           <Box sx={{ display: 'flex' }}>
           <Link href="#" underline="none" onClick={() => handleMenuClick('#E9E6E2')}>
@@ -52,7 +52,9 @@ const Header = () => {
           <Typography sx={{ color: '#FFFFFF', fontSize: { sm: '1.0rem', md: '1.0rem', lg: '1.2rem' }, fontFamily: 'Jost' }}>About</Typography>
         </Link>
         <Typography sx={{ color: '#FFFFFF', fontSize: { sm: '1.0rem', md: '1.0rem', lg: '1.2rem' }, fontFamily: 'Jost' }}>Services</Typography>
+        <Link href="#/contact" underline="none" onClick={() => handleMenuClick('#E9E6E2')}>
         <Typography sx={{ color: '#FFFFFF', fontSize: { sm: '1.0rem', md: '1.0rem', lg: '1.2rem' }, fontFamily: 'Jost' }}>Contact Us</Typography>
+        </Link>
       </List>
 
       {/* Mobile View */}
@@ -86,7 +88,9 @@ const Header = () => {
             <Typography sx={{ color: '#FFFFFF', fontSize: '1.2rem', fontFamily: 'Jost' }}>About</Typography>
           </Link>
           <Typography sx={{ color: '#FFFFFF', fontSize: '1.2rem', fontFamily: 'Jost' }}>Services</Typography>
+          <Link href="#/contact" underline="none" onClick={() => handleMenuClick('#E9E6E2')}>
           <Typography sx={{ color: '#FFFFFF', fontSize: '1.2rem', fontFamily: 'Jost' }}>Contact Us</Typography>
+          </Link>
         </List>
       </Drawer>
         </Grid>

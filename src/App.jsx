@@ -6,6 +6,7 @@ import Footer from '../src/components/Footer';
 import About from './pages/About';
 import './../fonts.css';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Contact from './pages/Contact';
 
 const theme = createTheme({
   breakpoints: {
@@ -28,8 +29,8 @@ const App = () => {
         <Routes>
           <Route path="/" exact element={<Home />} />
           <Route path="/about" exact element={<About />} />
-          {/* <Route path="/services" component={Services} />
-            <Route path="/contact" component={Contact} /> */}
+          {/* <Route path="/services" component={Services} /> */}
+          <Route path="/contact" exact element={<Contact />} />
         </Routes>
         <Footer/>
       </Router>
