@@ -27,7 +27,7 @@ const Header = () => {
         <Grid item md={1.5} xs={1} />
         <Grid item md={3} xs={4} sx={{ display: 'flex', justifyContent: 'start'}}>
           <Box sx={{ display: 'flex' }}>
-            <img src="../../logo.svg" alt="Sapt Logo" />
+            <img src="../../home/logo.svg" alt="Sapt Logo" />
           </Box>
         </Grid>
 
