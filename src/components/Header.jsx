@@ -19,6 +19,7 @@ const Header = () => {
 
   const handleMenuClick = (backgroudColor) => {
     setBackgroundColor(backgroudColor);
+    handleDrawerClose();
     sessionStorage.setItem('backgroundColor', backgroudColor);
   }
   return (
@@ -76,10 +77,10 @@ const Header = () => {
             padding: '2% 5%',
           }}
         >
-          <Link href="#" underline="none" onClick={handleDrawerClose}>
+          <Link href="#" underline="none" onClick={() => handleMenuClick('#E9E6E2')}>
             <Typography sx={{ color: '#FFFFFF', fontSize: '1.2rem', fontFamily: 'Jost' }}>Home</Typography>
           </Link>
-          <Link href="#/about" underline="none" onClick={handleDrawerClose}>
+          <Link href="#/about" underline="none" onClick={() => handleMenuClick('white')}>
             <Typography sx={{ color: '#FFFFFF', fontSize: '1.2rem', fontFamily: 'Jost' }}>About</Typography>
           </Link>
           <Typography sx={{ color: '#FFFFFF', fontSize: '1.2rem', fontFamily: 'Jost' }}>Services</Typography>
