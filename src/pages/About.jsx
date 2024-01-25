@@ -197,7 +197,7 @@ const About = () => {
       <Grid container sx={{ backgroundColor: '#E9E6E2' }}>
         <Grid item md={2} sx={{ display: {xs: 'none', md: 'block'}}}/>
         <Grid item lg={7} md={12} xs={12} sx={{ display: 'flex', justifyContent: 'center' }}>
-          <Typography sx={{ fontFamily: 'Jost-400', fontSize: '18px', letterSpacing: '1px', wordSpacing: '1px', lineHeight: '40px', textAlign: 'justify', }}>
+          <Typography sx={{ fontFamily: 'Jost-400', fontSize: '18px', letterSpacing: '1px', wordSpacing: '1px', lineHeight: '40px', textAlign: {xs: 'center', md: 'justify'}, }}>
             Let's team up and make the tech stuff a breeze, leaving you free to shine!
           </Typography>
         </Grid>
