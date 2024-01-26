@@ -4,12 +4,20 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Grid, Box, ImageListItem, Paper } from '@mui/material';
 import emailjs from '@emailjs/browser';
+import Snackbar from '@mui/material/Snackbar';
+import Alert from '@mui/material/Alert';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
         message: ''
+    });
+    const [open, setOpen] = useState(false);
+    const [emailError, setEmailError] = useState('');
+    const [notificationData, setNotificationData] = useState({
+        text: '',
+        severity: 'success'
     });
 
     useEffect(() => {
@@ -23,15 +31,55 @@ const Contact = () => {
             ...formData,
             [e.target.name]: e.target.value
         });
+
+        if (e.target.name === 'email') {
+            setEmailError('');
+        }
+    };
+
+    const validateEmail = (email) => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    };
+
+    const handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+
+        setOpen(false);
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        emailjs.send('service_5l77ejc', 'template_contact_form', {name: formData.name, email: formData.email, message: formData.message})
+        if (!validateEmail(formData.email)) {
+            setEmailError('Please enter a valid email address');
+            setFormData({
+                ...formData,
+                ['email']: ''
+            });
+            return;
+        }
+        emailjs.send('service_5l77ejc', 'template_contact_form', { name: formData.name, email: formData.email, message: formData.message })
             .then((result) => {
                 console.log(result.text);
+                setFormData({
+                    name: '',
+                    email: '',
+                    message: ''
+                });
+                setOpen(true);
+                setNotificationData({
+                    text: 'We have received your idea!',
+                    severity: 'success'
+                });
             }, (error) => {
                 console.log(error.text);
+                setOpen(true);
+                setNotificationData({
+                    text: 'Something went wrong!',
+                    severity: 'error'
+                });
             });
     };
     return (
@@ -59,6 +107,7 @@ const Contact = () => {
                                 label="Name"
                                 variant="outlined"
                                 name="name"
+                                required
                                 value={formData.name}
                                 onChange={handleChange}
                                 fullWidth
@@ -69,16 +118,20 @@ const Contact = () => {
                                 label="Email"
                                 variant="outlined"
                                 name="email"
+                                required
                                 value={formData.email}
                                 onChange={handleChange}
                                 fullWidth
                                 sx={{ mt: 2 }}
+                                error={!!emailError}
+                                helperText={emailError}
                             />
 
                             <TextField
                                 label="Tell Us Your Idea!"
                                 variant="outlined"
                                 name="message"
+                                required
                                 value={formData.message}
                                 onChange={handleChange}
                                 multiline
@@ -87,8 +140,29 @@ const Contact = () => {
                                 sx={{ mt: 2 }}
                             />
                             <Box textAlign="right" sx={{ mt: 2 }}>
-                                <Button onClick={handleSubmit} variant="contained" sx={{ backgroundColor: '#4D69FF', color: 'white', borderRadius: '30px', fontSize: '1em', fontFamily: 'Jost-700', width: '150px', height: '40px' }}> Submit </Button>
+                                <Button onClick={handleSubmit}
+                                    variant="contained"
+                                    disabled={!formData.name || !formData.email || !formData.message}
+                                    sx={{ backgroundColor: '#4D69FF', color: 'white', borderRadius: '30px', fontSize: '1em', fontFamily: 'Jost-700', width: '150px', height: '40px' }}>
+                                    Submit </Button>
                             </Box>
+
+                            {notificationData &&
+
+                                <Snackbar
+                                    anchorOrigin={{
+                                        vertical: 'bottom',
+                                        horizontal: 'left',
+                                    }}
+                                    open={open}
+                                    autoHideDuration={5000}
+                                    onClose={handleClose}
+                                >
+                                    <Alert onClose={handleClose} severity={notificationData.severity}>
+                                        {notificationData.text}
+                                    </Alert>
+                                </Snackbar>
+                            }
                         </form>
                     </Paper>
                 </Grid>
