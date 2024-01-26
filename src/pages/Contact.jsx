@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import FormControl from '@mui/material/FormControl';
 import Typography from '@mui/material/Typography';
-import { Grid, Box, Radio, RadioGroup, FormControlLabel, Paper } from '@mui/material';
+import { Grid, Box, ImageListItem, RadioGroup, FormControlLabel, Paper } from '@mui/material';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -28,83 +27,66 @@ const Contact = () => {
     };
     return (
         <>
-        <Box height={50} sx= {{ backgroundColor: "#E9E6E2"}}/>
-        <Grid container justify="center" alignItems="center" sx={{ display: 'flex', flexDirection: 'row', backgroundColor: "#E9E6E2" }}>
-            <Grid item md={0.5} />
-            <Grid item md={4}>
-                <img src="../../img.png" style={{ maxHeight: '100%', maxWidth: '100%'}}/>
-            </Grid>
-            <Grid item md={1}/>
-            <Grid item md={5}>
-                <Paper elevation={5} sx= {{padding: '4%'}}>
-                    <Typography variant="h4" gutterBottom sx={{pt: '7%', fontFamily: 'RammettoOne'}}>
-                        Partner With Us
-                    </Typography>
-                    <Typography variant="body1" sx={{fontFamily: 'Jost'}} gutterBottom>
-                        Elevate Your Brand
-                    </Typography>
-                    <form onSubmit={handleSubmit}>
-                        <TextField
-                            label="Name"
-                            variant="outlined"
-                            name="name"
-                            value={formData.name}
-                            onChange={handleChange}
-                            fullWidth
-                            margin="normal"
-                        />
-                        <TextField
-                            label="Phone Number"
-                            variant="outlined"
-                            name="phoneNumber"
-                            value={formData.phoneNumber}
-                            onChange={handleChange}
-                            fullWidth
-                            margin="normal"
-                        />
-                        <TextField
-                            label="Email"
-                            variant="outlined"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                            fullWidth
-                            margin="normal"
-                        />
-                        <FormControl component="fieldset" fullWidth margin="normal">
-                            <Typography variant="subtitle1">Preferred Communication</Typography>
-                            <RadioGroup
-                                row
-                                name="preferredCommunication"
-                                value={formData.preferredCommunication}
-                                onChange={handleChange}
-                            >
-                                <FormControlLabel value="email" control={<Radio />} label="Email" />
-                                <FormControlLabel value="phone" control={<Radio />} label="Phone" />
-                                <FormControlLabel value="both" control={<Radio />} label="Both" />
-                            </RadioGroup>
-                        </FormControl>
-                        <TextField
-                            label="Share Requirements"
-                            variant="outlined"
-                            name="requirements"
-                            value={formData.requirements}
-                            onChange={handleChange}
-                            multiline
-                            rows={4}
-                            fullWidth
-                            margin="normal"
-                        />
-                        <Box textAlign="right">
-                            <Button variant="contained" sx={{ backgroundColor: '#4D69FF', color: 'white', borderRadius: '30px', fontSize: '0.7em', fontFamily: 'Jost-600', width: '150px', height: '40px' }}> Submit </Button>
-                        </Box>
-                    </form>
-                </Paper>
-            </Grid>
-            <Grid item md={1.5} />
+            <Box height={50} sx={{ backgroundColor: "#E9E6E2" }} />
+            <Grid container justify="center" alignItems="center" sx={{ display: 'flex', flexDirection: 'row', backgroundColor: "#E9E6E2" }}>
+                <Grid item md={1} sx={{ xs: 'none', md: 'block' }} />
+                <Grid item md={4} xs={12} sx={{ display: { xs: 'flex', md: 'block' }, "justifyContent": { xs: 'center', md: 'normal' } }}>
+                    <ImageListItem sx={{ maxHeight: { xs: '50%', md: '100%' }, maxWidth: { xs: '50%', md: '100%' } }}>
+                        <img src="../../coffee.svg" />
+                    </ImageListItem>
 
-        </Grid>
-        <Box height={50} sx= {{ backgroundColor: "#E9E6E2"}}/>
+                </Grid>
+                <Grid item md={0.5} sx={{ xs: 'none', md: 'block' }} />
+                <Grid item md={5} xs={12}>
+                    <Paper elevation={3} sx={{ padding: '4%', m: { xs: '5%', md: '0' } }}>
+                        <Typography variant="h6" gutterBottom sx={{ pt: '7%', fontFamily: 'RammettoOne' }}>
+                            SIP. CHAT. CONNECT
+                        </Typography>
+                        <Typography variant="body1" sx={{ fontFamily: 'Jost' }} gutterBottom>
+                            Elevate Your Brand With Us
+                        </Typography>
+                        <form onSubmit={handleSubmit}>
+                            <TextField
+                                label="Name"
+                                variant="outlined"
+                                name="name"
+                                value={formData.name}
+                                onChange={handleChange}
+                                fullWidth
+                                sx={{ mt: 2 }}
+                            />
+
+                            <TextField
+                                label="Email"
+                                variant="outlined"
+                                name="email"
+                                value={formData.email}
+                                onChange={handleChange}
+                                fullWidth
+                                sx={{ mt: 2 }}
+                            />
+
+                            <TextField
+                                label="Tell Us Your Idea!"
+                                variant="outlined"
+                                name="requirements"
+                                value={formData.requirements}
+                                onChange={handleChange}
+                                multiline
+                                rows={4}
+                                fullWidth
+                                sx={{ mt: 2 }}
+                            />
+                            <Box textAlign="right" sx={{ mt: 2 }}>
+                                <Button variant="contained" sx={{ backgroundColor: '#4D69FF', color: 'white', borderRadius: '30px', fontSize: '1em', fontFamily: 'Jost-700', width: '150px', height: '40px' }}> Submit </Button>
+                            </Box>
+                        </form>
+                    </Paper>
+                </Grid>
+                <Grid item md={1.5} sx={{ xs: 'none', md: 'block' }} />
+
+            </Grid>
+            <Box height={50} sx={{ backgroundColor: "#E9E6E2" }} />
         </>
     )
 }
