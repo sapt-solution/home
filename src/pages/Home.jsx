@@ -1,10 +1,17 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { Grid, Typography, Box, Paper, useTheme, Button, useMediaQuery} from '@mui/material';
-
+import { useNavigate } from "react-router-dom";
+import { BackgroundColorContext } from '../context/BackgroundColorContext';
 
 const Home = () => {
   const theme = useTheme();
+  const navigate = useNavigate();
   const isMediumScreen = useMediaQuery((theme) => theme.breakpoints.up('md'));
+  const { setBackgroundColor } = useContext(BackgroundColorContext);
+  const handleGetInTouchButton = () => {
+    setBackgroundColor("#E9E6E2")
+    navigate("/contact", {replace: true});
+  }
 
   const arrowIconStyle = {
     position: 'absolute',
@@ -153,7 +160,7 @@ const Home = () => {
 
           <Box sx={{ display: 'flex', justifyContent: 'center' }}>
             <>
-              <Button variant="contained" sx={{ mt: '1%', backgroundColor: '#4D69FF', color: 'white', borderRadius: '30px', fontSize: '0.7em', fontFamily: 'Jost-600', width: '150px', height: '40px' }}> Get in Touch </Button>
+              <Button variant="contained" onClick={handleGetInTouchButton} sx={{ mt: '1%', backgroundColor: '#4D69FF', color: 'white', borderRadius: '30px', fontSize: '0.7em', fontFamily: 'Jost-600', width: '150px', height: '40px' }}> Get in Touch </Button>
             </>
           </Box>
 

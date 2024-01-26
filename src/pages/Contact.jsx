@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { Grid, Box, ImageListItem, RadioGroup, FormControlLabel, Paper } from '@mui/material';
+import { Grid, Box, ImageListItem, Paper } from '@mui/material';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -12,6 +12,11 @@ const Contact = () => {
         preferredCommunication: '',
         requirements: ''
     });
+
+    useEffect(() => {
+        // Scroll to the top of the page whenever the route changes
+        window.scrollTo(0, 0);
+      }, []);
 
     const handleChange = (e) => {
         setFormData({

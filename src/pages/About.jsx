@@ -1,8 +1,15 @@
-import React from 'react';
-import { Grid, Typography, Box, Paper, useTheme, Button } from '@mui/material';
-
+import React, { useContext } from 'react';
+import { Grid, Typography, Box, Button } from '@mui/material';
+import { useNavigate } from "react-router-dom";
+import { BackgroundColorContext } from '../context/BackgroundColorContext';
 
 const About = () => {
+  const navigate = useNavigate();
+  const { setBackgroundColor } = useContext(BackgroundColorContext);
+  const handleGetInTouchButton = () => {
+    setBackgroundColor("#E9E6E2")
+    navigate("/contact", {replace: true});
+  }
   return (
     <>
       <Box sx={{ height: { xs: 30, md: 150 } }} />
@@ -13,7 +20,7 @@ const About = () => {
         </Grid>
         <Grid item md={5} xs={12} sx={{ p: {xs: '5%', md: '0'}}}>
           <Typography sx={{ fontFamily: 'RammettoOne', fontSize: '1.5rem' }}>
-            Hello, welcome to Sapt
+            Hello, Welcome to Sapt
           </Typography>
 
           <Typography sx={{ fontFamily: 'Jost', letterSpacing: '2px', wordSpacing: '1px', lineHeight: '40px', textAlign: 'justify', mt: 1 }}>
@@ -202,7 +209,7 @@ const About = () => {
           </Typography>
         </Grid>
         <Grid item lg={1} md={12} xs={12} sx={{display: 'flex', justifyContent: 'center'}}>
-          <Button variant="contained" sx={{ backgroundColor: '#4D69FF', color: 'white', borderRadius: '30px', fontSize: '0.7em', fontFamily: 'Jost-600', width: '150px', height: '40px' }}> Get in Touch </Button>
+          <Button variant="contained" onClick={handleGetInTouchButton} sx={{ backgroundColor: '#4D69FF', color: 'white', borderRadius: '30px', fontSize: '0.7em', fontFamily: 'Jost-600', width: '150px', height: '40px' }}> Get in Touch </Button>
         </Grid>
         <Grid item md={2} sx={{ display: {xs: 'none', md: 'block'}}}/>
       </Grid>

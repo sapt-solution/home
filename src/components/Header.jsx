@@ -1,13 +1,13 @@
-import React, { useState} from 'react';
+import React, { useState, useContext} from 'react';
 import { List, Box, Grid, Typography, Link, ListItem, ListItemButton, ListItemText} from '@mui/material';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
+import { BackgroundColorContext } from '../context/BackgroundColorContext';
 
 const Header = () => {
-  const storedColor = sessionStorage.getItem('backgroundColor') || '#E9E6E2';
   const [openDrawer, setOpenDrawer] = useState(false);
-  const [backgroundColor, setBackgroundColor] = useState(storedColor);
+  const { backgroundColor, setBackgroundColor } = useContext(BackgroundColorContext);
 
   const handleDrawerOpen = () => {
     setOpenDrawer(true);
@@ -20,7 +20,6 @@ const Header = () => {
   const handleMenuClick = (backgroudColor) => {
     setBackgroundColor(backgroudColor);
     handleDrawerClose();
-    sessionStorage.setItem('backgroundColor', backgroudColor);
   }
   return (
     <>
