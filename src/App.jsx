@@ -1,11 +1,11 @@
 import React from 'react';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Header from '../src/components/Header';
 import Footer from '../src/components/Footer';
 import About from './pages/About';
 import './../fonts.css';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Contact from './pages/Contact';
 import { BackgroundColorContextProvider } from './context/BackgroundColorContext';
 

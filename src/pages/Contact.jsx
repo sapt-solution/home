@@ -3,20 +3,20 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Grid, Box, ImageListItem, Paper } from '@mui/material';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
         name: '',
-        phoneNumber: '',
         email: '',
-        preferredCommunication: '',
-        requirements: ''
+        message: ''
     });
 
     useEffect(() => {
         // Scroll to the top of the page whenever the route changes
         window.scrollTo(0, 0);
-      }, []);
+        emailjs.init('uMjNpb0Vfb5R8ZIv_')
+    }, []);
 
     const handleChange = (e) => {
         setFormData({
@@ -27,8 +27,12 @@ const Contact = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Handle form submission logic here
-        console.log(formData);
+        emailjs.send('service_5l77ejc', 'template_contact_form', {name: formData.name, email: formData.email, message: formData.message})
+            .then((result) => {
+                console.log(result.text);
+            }, (error) => {
+                console.log(error.text);
+            });
     };
     return (
         <>
@@ -50,7 +54,7 @@ const Contact = () => {
                         <Typography variant="body1" sx={{ fontFamily: 'Jost' }} gutterBottom>
                             Elevate Your Brand With Us
                         </Typography>
-                        <form onSubmit={handleSubmit}>
+                        <form>
                             <TextField
                                 label="Name"
                                 variant="outlined"
@@ -74,8 +78,8 @@ const Contact = () => {
                             <TextField
                                 label="Tell Us Your Idea!"
                                 variant="outlined"
-                                name="requirements"
-                                value={formData.requirements}
+                                name="message"
+                                value={formData.message}
                                 onChange={handleChange}
                                 multiline
                                 rows={4}
@@ -83,7 +87,7 @@ const Contact = () => {
                                 sx={{ mt: 2 }}
                             />
                             <Box textAlign="right" sx={{ mt: 2 }}>
-                                <Button variant="contained" sx={{ backgroundColor: '#4D69FF', color: 'white', borderRadius: '30px', fontSize: '1em', fontFamily: 'Jost-700', width: '150px', height: '40px' }}> Submit </Button>
+                                <Button onClick={handleSubmit} variant="contained" sx={{ backgroundColor: '#4D69FF', color: 'white', borderRadius: '30px', fontSize: '1em', fontFamily: 'Jost-700', width: '150px', height: '40px' }}> Submit </Button>
                             </Box>
                         </form>
                     </Paper>
