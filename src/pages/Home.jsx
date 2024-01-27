@@ -17,13 +17,13 @@ const Home = () => {
     position: 'absolute',
     bottom: 0,
     left: { xs: '8%', md: '80%' },
-    top: { xs: '67%', md: '70%' }
+    top: { xs: '75%', md: '70%' }
   };
 
   const ArrowIcon = () => {
     return (
       <Box sx={arrowIconStyle}>
-        <svg width="30" height={isMediumScreen ? '218px' : '200px'} viewBox="0 0 30 218" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="30" height={isMediumScreen ? '218px' : '150px'} viewBox="0 0 30 218" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect y="218" width="218" height="30" rx="15" transform="rotate(-90 0 218)" fill="#192021" />
           <circle cx="14.5" cy="142.5" r="7" fill="#4D69FF" stroke="white" />
           <path d="M4 175.325L14.5 186L25 175.325L23.2351 173.531L15.7478 181.143L15.7478 148L13.252 148L13.252 181.143L5.76487 173.531L4 175.325Z" fill="#4D69FF" />
