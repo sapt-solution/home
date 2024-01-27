@@ -1,19 +1,26 @@
-import React from 'react';
-import { Grid, Typography, Box, Paper, useTheme, Button } from '@mui/material';
-
+import React, { useContext } from 'react';
+import { Grid, Typography, Box, Button } from '@mui/material';
+import { useNavigate } from "react-router-dom";
+import { BackgroundColorContext } from '../context/BackgroundColorContext';
 
 const About = () => {
+  const navigate = useNavigate();
+  const { setBackgroundColor } = useContext(BackgroundColorContext);
+  const handleGetInTouchButton = () => {
+    setBackgroundColor("#E9E6E2")
+    navigate("/contact", { replace: true });
+  }
   return (
     <>
       <Box sx={{ height: { xs: 30, md: 150 } }} />
       <Grid container>
-        <Grid item md={1.5} sx={{display: {xs: 'none', md: 'block'}}} />
+        <Grid item md={1.5} sx={{ display: { xs: 'none', md: 'block' } }} />
         <Grid item md={4} xs={12} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
           <img src="../../hand.svg" alt="Hands" />
         </Grid>
-        <Grid item md={5} xs={12} sx={{ p: {xs: '5%', md: '0'}}}>
+        <Grid item md={5} xs={12} sx={{ p: { xs: '5%', md: '0' } }}>
           <Typography sx={{ fontFamily: 'RammettoOne', fontSize: '1.5rem' }}>
-            Hello, welcome to Sapt
+            Hello, Welcome to Sapt
           </Typography>
 
           <Typography sx={{ fontFamily: 'Jost', letterSpacing: '2px', wordSpacing: '1px', lineHeight: '40px', textAlign: 'justify', mt: 1 }}>
@@ -31,11 +38,11 @@ const About = () => {
       </Grid>
       <Box height={150} />
 
-      <Box sx={{ height: {xs: 'none', md: 30}, backgroundColor: "#E9E6E2" }} />
+      <Box sx={{ height: { xs: 'none', md: 30 }, backgroundColor: "#E9E6E2" }} />
 
       <Grid container sx={{ backgroundColor: "#E9E6E2", display: 'flex', flexDirection: 'row' }}>
         <Grid item md={2} />
-        <Grid item md={4} xs={12} sx={{ p: {xs: '5%', md: '0'}}}>
+        <Grid item md={4} xs={12} sx={{ p: { xs: '5%', md: '0' } }}>
           <Typography sx={{ fontFamily: 'RammettoOne', fontSize: '1.5rem' }}>
             A bit of history
           </Typography>
@@ -45,8 +52,8 @@ const About = () => {
             Now we are venturing into the world of digital products leveraging our shared experiences to create software solutions
           </Typography>
         </Grid>
-        <Grid item md={1} sx={{display: {xs: 'none', md:'block'}}}/>
-        <Grid item md={3} xs={12} sx={{display: {xs: 'flex', md: 'block'}, justifyContent: 'center' }} >
+        <Grid item md={1} sx={{ display: { xs: 'none', md: 'block' } }} />
+        <Grid item md={3} xs={12} sx={{ display: { xs: 'flex', md: 'block' }, justifyContent: 'center' }} >
           <img src="../../friend.svg" alt="Friend" />
         </Grid>
         <Grid item md={2} />
@@ -56,14 +63,14 @@ const About = () => {
       <Box height={150} />
 
       <Grid container>
-        <Grid item md={1.5} sx={{ display: {xs: 'none', md: 'block'}}} />
+        <Grid item md={1.5} sx={{ display: { xs: 'none', md: 'block' } }} />
         <Grid item md={3} sx={{ display: 'flex', alignItems: 'end' }}>
           <Typography sx={{ fontFamily: 'RammettoOne', fontSize: '28px', letterSpacing: '2px', wordSpacing: '1px', lineHeight: '40px', textAlign: 'justify', mt: 1 }}>
             Our 7 Core Values
           </Typography>
         </Grid>
-        <Grid item md={3} xs={12} sx={{ m: '0 1%', display: {xs: 'none', md: 'flex'} }}>
-          <img src="../../weird.svg" alt="Weird" style={{height: '100%', width: '100%'}}/>
+        <Grid item md={3} xs={12} sx={{ m: '0 1%', display: { xs: 'none', md: 'flex' } }}>
+          <img src="../../weird.svg" alt="Weird" style={{ height: '100%', width: '100%' }} />
         </Grid>
         <Grid item md={3} xs={12} sx={{ backgroundColor: "#E9E6E2", height: 'auto', width: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'end', padding: '2%' }}>
 
@@ -80,12 +87,12 @@ const About = () => {
             We're the trust-building champs, sticking to our word, and rocking fairness like a boss.
           </Typography>
         </Grid>
-        <Grid item md={1.5} sx={{ display: {xs: 'none', md: 'block'}}} />
+        <Grid item md={1.5} sx={{ display: { xs: 'none', md: 'block' } }} />
       </Grid>
 
 
-      <Grid container sx={{ mt: {xs: '1%', md: '2%'} }}>
-        <Grid item md={1.5} sx={{ display: {xs: 'none', md: 'block'}}} />
+      <Grid container sx={{ mt: { xs: '1%', md: '2%' } }}>
+        <Grid item md={1.5} sx={{ display: { xs: 'none', md: 'block' } }} />
         <Grid item md={3} xs={12} sx={{ display: 'flex', flexDirection: 'column', backgroundColor: "#E9E6E2", height: 'auto', padding: '2%' }}>
           <Box sx={{ display: 'flex', flexDirection: 'row' }}>
             <Typography sx={{ fontFamily: 'RammettoOne', fontSize: '60px', letterSpacing: '2px', wordSpacing: '1px', lineHeight: '40px', color: '#4D69FF' }}>
@@ -100,7 +107,7 @@ const About = () => {
             Clock in at Sapt, where teamwork meets freedom, and everyone's a winner!
           </Typography>
         </Grid>
-        <Grid item md={3} xs={12} sx={{ m: {xs: '1% 0', md: '0 1%'}, backgroundColor: "#E9E6E2", height: 'auto', width: 'auto', display: 'flex', flexDirection: 'column', padding: '2%' }}>
+        <Grid item md={3} xs={12} sx={{ m: { xs: '1% 0', md: '0 1%' }, backgroundColor: "#E9E6E2", height: 'auto', width: 'auto', display: 'flex', flexDirection: 'column', padding: '2%' }}>
 
           <Box sx={{ display: 'flex', flexDirection: 'row' }}>
             <Typography sx={{ fontFamily: 'RammettoOne', fontSize: '60px', letterSpacing: '2px', wordSpacing: '1px', lineHeight: '40px', color: '#4D69FF' }}>
@@ -122,7 +129,7 @@ const About = () => {
               4
             </Typography>
             <Typography sx={{ fontFamily: 'Jost-700', fontSize: '18px', letterSpacing: '2px', wordSpacing: '1px', lineHeight: '30px', ml: 2 }}>
-            LIABLE
+              LIABLE
             </Typography>
           </Box>
 
@@ -130,11 +137,11 @@ const About = () => {
             We're the action heroes, owning every move we make. Setting goals, learning from slips, and soaring high is our game
           </Typography>
         </Grid>
-        <Grid item md={1.5} sx={{ display: {xs: 'none', md: 'block'}}} />
+        <Grid item md={1.5} sx={{ display: { xs: 'none', md: 'block' } }} />
       </Grid>
 
-      <Grid container sx={{ mt: {xs: '1%', md: '2%'} }}>
-        <Grid item md={1.5} sx={{ display: {xs: 'none', md: 'block'}}} />
+      <Grid container sx={{ mt: { xs: '1%', md: '2%' } }}>
+        <Grid item md={1.5} sx={{ display: { xs: 'none', md: 'block' } }} />
         <Grid item md={3} sx={{ display: 'flex', flexDirection: 'column', backgroundColor: "#E9E6E2", height: 'auto', padding: '2%' }}>
           <Box sx={{ display: 'flex', flexDirection: 'row' }}>
             <Typography sx={{ fontFamily: 'RammettoOne', fontSize: '60px', letterSpacing: '2px', wordSpacing: '1px', lineHeight: '40px', color: '#4D69FF' }}>
@@ -149,7 +156,7 @@ const About = () => {
             We're not just about 'me,' but about the 'we.' It's not just humility; it's our magic potion for teamwork, kindness, and epic wins!
           </Typography>
         </Grid>
-        <Grid item md={3} sx={{ m: {xs: '1% 0', md: '0 1%'}, backgroundColor: "#E9E6E2", height: 'auto', width: 'auto', display: 'flex', flexDirection: 'column', padding: '2%' }}>
+        <Grid item md={3} sx={{ m: { xs: '1% 0', md: '0 1%' }, backgroundColor: "#E9E6E2", height: 'auto', width: 'auto', display: 'flex', flexDirection: 'column', padding: '2%' }}>
 
           <Box sx={{ display: 'flex', flexDirection: 'row' }}>
             <Typography sx={{ fontFamily: 'RammettoOne', fontSize: '60px', letterSpacing: '2px', wordSpacing: '1px', lineHeight: '40px', color: '#4D69FF' }}>
@@ -179,7 +186,7 @@ const About = () => {
             Work's not just work; it's a playground of creativity. We're all about turning tasks into celebrations, making laughter our daily vitamin.
           </Typography>
         </Grid>
-        <Grid item md={1.5} sx={{ display: {xs: 'none', md: 'block'}}} />
+        <Grid item md={1.5} sx={{ display: { xs: 'none', md: 'block' } }} />
       </Grid>
 
       <Box height={150} />
@@ -195,20 +202,18 @@ const About = () => {
       <Box height={50} sx={{ backgroundColor: '#E9E6E2' }} />
 
       <Grid container sx={{ backgroundColor: '#E9E6E2' }}>
-        <Grid item md={2} sx={{ display: {xs: 'none', md: 'block'}}}/>
+        <Grid item md={2} sx={{ display: { xs: 'none', md: 'block' } }} />
         <Grid item lg={7} md={12} xs={12} sx={{ display: 'flex', justifyContent: 'center' }}>
-          <Typography sx={{ fontFamily: 'Jost-400', fontSize: '18px', letterSpacing: '1px', wordSpacing: '1px', lineHeight: '40px', textAlign: {xs: 'center', md: 'justify'}, }}>
+          <Typography sx={{ fontFamily: 'Jost-400', fontSize: '18px', letterSpacing: '1px', wordSpacing: '1px', lineHeight: '40px', textAlign: { xs: 'center', md: 'justify' }, }}>
             Let's team up and make the tech stuff a breeze, leaving you free to shine!
           </Typography>
         </Grid>
-        <Grid item lg={1} md={12} xs={12} sx={{display: 'flex', justifyContent: 'center'}}>
-          <Button variant="contained" sx={{ backgroundColor: '#4D69FF', color: 'white', borderRadius: '30px', fontSize: '0.7em', fontFamily: 'Jost-600', width: '150px', height: '40px' }}> Get in Touch </Button>
+        <Grid item lg={1} md={12} xs={12} sx={{ display: 'flex', justifyContent: 'center' }}>
+          <Button variant="contained" onClick={handleGetInTouchButton} sx={{ backgroundColor: '#4D69FF', color: 'white', borderRadius: '30px', fontSize: '0.7em', fontFamily: 'Jost-600', width: '150px', height: '40px' }}> Get in Touch </Button>
         </Grid>
-        <Grid item md={2} sx={{ display: {xs: 'none', md: 'block'}}}/>
+        <Grid item md={2} sx={{ display: { xs: 'none', md: 'block' } }} />
       </Grid>
       <Box height={50} sx={{ backgroundColor: '#E9E6E2' }} />
-
-      <Box height={50} />
     </>
   );
 };
