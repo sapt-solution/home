@@ -97,7 +97,7 @@ const Contact = () => {
                 <Grid item md={7} xs={12}>
                     <Paper square={false} sx={{ padding: '4%', m: { xs: '5%', md: '0' } }}>
                         <Typography variant="h6" gutterBottom sx={{ pt: '7%', fontFamily: 'RammettoOne' }}>
-                            SIP. CHAT. CONNECT
+                            CONNECT. SIP. CHAT.
                         </Typography>
                         <Typography variant="body1" sx={{ fontFamily: 'Jost' }} gutterBottom>
                             Elevate Your Brand With Us
