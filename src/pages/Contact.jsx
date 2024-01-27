@@ -6,6 +6,7 @@ import { Grid, Box, ImageListItem, Paper } from '@mui/material';
 import emailjs from '@emailjs/browser';
 import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
+import { height } from '@mui/system';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -86,16 +87,10 @@ const Contact = () => {
         <>
             <Box height={50} sx={{ backgroundColor: "#E9E6E2" }} />
             <Grid container justify="center" alignItems="center" sx={{ display: 'flex', flexDirection: 'row', backgroundColor: "#E9E6E2" }}>
-                <Grid item md={1} sx={{ xs: 'none', md: 'block' }} />
-                <Grid item md={4} xs={12} sx={{ display: { xs: 'flex', md: 'block' }, "justifyContent": { xs: 'center', md: 'normal' } }}>
-                    <ImageListItem sx={{ maxHeight: { xs: '50%', md: '100%' }, maxWidth: { xs: '50%', md: '100%' } }}>
-                        <img src="../../coffee.svg" />
-                    </ImageListItem>
-
-                </Grid>
-                <Grid item md={0.5} sx={{ xs: 'none', md: 'block' }} />
-                <Grid item md={5} xs={12}>
-                    <Paper elevation={3} sx={{ padding: '4%', m: { xs: '5%', md: '0' } }}>
+                <Grid item md={1.5} sx={{ xs: 'none', md: 'block' }} />
+                <Grid item md={1} />
+                <Grid item md={7} xs={12}>
+                    <Paper square={false} sx={{ padding: '4%', m: { xs: '5%', md: '0' } }}>
                         <Typography variant="h6" gutterBottom sx={{ pt: '7%', fontFamily: 'RammettoOne' }}>
                             SIP. CHAT. CONNECT
                         </Typography>
@@ -166,6 +161,7 @@ const Contact = () => {
                         </form>
                     </Paper>
                 </Grid>
+                <Grid item md={1} />
                 <Grid item md={1.5} sx={{ xs: 'none', md: 'block' }} />
 
             </Grid>

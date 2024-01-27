@@ -47,12 +47,12 @@ const Header = () => {
         <Link href="#" underline="none" onClick={() => handleMenuClick('#E9E6E2')}>
           <Typography sx={{ color: '#FFFFFF', fontSize: { sm: '1.0rem', md: '1.0rem', lg: '1.2rem' }, fontFamily: 'Jost' }}>Home</Typography>
         </Link>
-        <Typography sx={{ color: '#FFFFFF', fontSize: { sm: '1.0rem', md: '1.0rem', lg: '1.2rem' }, fontFamily: 'Jost' }}>Services</Typography>
+        <Typography sx={{ color: '#FFFFFF', fontSize: { sm: '1.0rem', md: '1.0rem', lg: '1.2rem' }, fontFamily: 'Jost' }}>Our Work</Typography>
         <Link href="#/about" underline="none" onClick={() => handleMenuClick('white')}>
-          <Typography sx={{ color: '#FFFFFF', fontSize: { sm: '1.0rem', md: '1.0rem', lg: '1.2rem' }, fontFamily: 'Jost' }}>About Us</Typography>
+          <Typography sx={{ color: '#FFFFFF', fontSize: { sm: '1.0rem', md: '1.0rem', lg: '1.2rem' }, fontFamily: 'Jost' }}>Who Are We</Typography>
         </Link>
         <Link href="#/contact" underline="none" onClick={() => handleMenuClick('#E9E6E2')}>
-        <Typography sx={{ color: '#FFFFFF', fontSize: { sm: '1.0rem', md: '1.0rem', lg: '1.2rem' }, fontFamily: 'Jost' }}>Contact Us</Typography>
+        <Typography sx={{ color: '#FFFFFF', fontSize: { sm: '1.0rem', md: '1.0rem', lg: '1.2rem' }, fontFamily: 'Jost' }}>Get in Touch</Typography>
         </Link>
       </List>
 
@@ -84,13 +84,13 @@ const Header = () => {
             <Typography sx={{ color: '#FFFFFF', fontSize: '1.2rem', fontFamily: 'Jost' }}>Home</Typography>
             </ListItemButton>
             <ListItemButton component="a" href="#" onClick={() => handleMenuClick('#E9E6E2')}>
-            <Typography sx={{ color: '#FFFFFF', fontSize: '1.2rem', fontFamily: 'Jost' }}>Services</Typography>
+            <Typography sx={{ color: '#FFFFFF', fontSize: '1.2rem', fontFamily: 'Jost' }}>Our Work</Typography>
             </ListItemButton>
             <ListItemButton component="a" href="#/about" onClick={() => handleMenuClick('white')}>
-            <Typography sx={{ color: '#FFFFFF', fontSize: '1.2rem', fontFamily: 'Jost' }}>About Us</Typography>
+            <Typography sx={{ color: '#FFFFFF', fontSize: '1.2rem', fontFamily: 'Jost' }}>Who Are We</Typography>
             </ListItemButton>
             <ListItemButton component="a" href="#/contact" onClick={() => handleMenuClick('#E9E6E2')}>
-            <Typography sx={{ color: '#FFFFFF', fontSize: '1.2rem', fontFamily: 'Jost' }}>Contact Us</Typography>
+            <Typography sx={{ color: '#FFFFFF', fontSize: '1.2rem', fontFamily: 'Jost' }}>Get in Touch</Typography>
             </ListItemButton>
          
         </List>
