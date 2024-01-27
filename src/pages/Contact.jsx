@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { Grid, Box, ImageListItem, Paper } from '@mui/material';
+import { Grid, Box, Paper } from '@mui/material';
 import emailjs from '@emailjs/browser';
 import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -19,6 +20,7 @@ const Contact = () => {
         text: '',
         severity: 'success'
     });
+    const reCaptchaRef = useRef();
 
     useEffect(() => {
         // Scroll to the top of the page whenever the route changes
@@ -50,8 +52,9 @@ const Contact = () => {
         setOpen(false);
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+        const token = await reCaptchaRef.current.executeAsync();
         if (!validateEmail(formData.email)) {
             setEmailError('Please enter a valid email address');
             setFormData({
@@ -60,7 +63,8 @@ const Contact = () => {
             });
             return;
         }
-        emailjs.send('service_5l77ejc', 'template_contact_form', { name: formData.name, email: formData.email, message: formData.message })
+        emailjs.send('service_5l77ejc', 'template_contact_form',
+            { name: formData.name, email: formData.email, message: formData.message, 'g-recaptcha-response': token })
             .then((result) => {
                 console.log(result.text);
                 setFormData({
@@ -69,6 +73,7 @@ const Contact = () => {
                     message: ''
                 });
                 setOpen(true);
+                reCaptchaRef.current.reset();
                 setNotificationData({
                     text: 'We have received your idea!',
                     severity: 'success'
@@ -76,6 +81,7 @@ const Contact = () => {
             }, (error) => {
                 console.log(error.text);
                 setOpen(true);
+                reCaptchaRef.current.reset();
                 setNotificationData({
                     text: 'Something went wrong!',
                     severity: 'error'
@@ -140,6 +146,11 @@ const Contact = () => {
                                     sx={{ backgroundColor: '#4D69FF', color: 'white', borderRadius: '30px', fontSize: '1em', fontFamily: 'Jost-700', width: '150px', height: '40px' }}>
                                     Submit </Button>
                             </Box>
+                            <ReCAPTCHA
+                                sitekey="6Lep3V0pAAAAACf8CQVC_FchKud5jJ3MQUIuayrx"
+                                size="invisible"
+                                ref={reCaptchaRef}
+                            />
 
                             {notificationData &&
 
