@@ -6,7 +6,6 @@ import { Grid, Box, ImageListItem, Paper } from '@mui/material';
 import emailjs from '@emailjs/browser';
 import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
-import { height } from '@mui/system';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
