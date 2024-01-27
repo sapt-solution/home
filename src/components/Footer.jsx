@@ -99,7 +99,7 @@ const Footer = () => {
                         <Typography sx={{ color: '#4D69FF', fontSize: '0.90em', m: 1, fontFamily: 'Jost-400' }}> Toronto, Canada </Typography>
                     </Grid>
                     <Grid item md={2} sx={{ display: { xs: 'none', md: 'flex' }, flexDirection: 'column', alignItems: 'center' }}>
-                        <Typography sx={{ color: '#4D69FF', fontSize: '0.90em', fontFamily: 'Jost-400' }}> saptservices@gmail.com </Typography>
+                        <Typography sx={{ color: '#4D69FF', fontSize: '0.90em', fontFamily: 'Jost-400' }}> saptsolution@gmail.com </Typography>
                     </Grid>
                     <Grid item md={2} sx={{ display: { xs: 'none', md: 'flex' }, flexDirection: 'row', justifyContent: 'center' }}>
                         <Box>
