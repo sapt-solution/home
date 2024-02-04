@@ -80,7 +80,7 @@ const Home = () => {
       <Grid container sx={{ display: 'flex', flexDirection: 'row', backgroundColor: '#E9E6E2', padding: '2% 0%', marginTop: '1%' }}>
         <Grid item md={1} sx={{ display: { xs: 'none', md: 'block' } }} />
         <Grid item md={10} xs={12} >
-          <Typography sx={{ color: '#1B1B1B', fontSize: { xs: '1.2rem', md: '1.5em' }, fontFamily: 'RammettoOne', width: '100%', textAlign: 'center' }}>
+          <Typography sx={{ color: '#1B1B1B', fontSize: { xs: '1.2rem', md: '1.5em' }, fontFamily: 'RammettoOne', width: '100%', textAlign: 'center', textWrap: 'balance' }}>
             All about delivering
             <TextBubble style={{ zIndex: 1 }} text="top-notch" opacity={1} fontFamily='RammettoOne'/>
             work that  <br />
