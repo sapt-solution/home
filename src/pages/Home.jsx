@@ -82,7 +82,7 @@ const Home = () => {
         <Grid item md={10} xs={12} >
           <Typography sx={{ color: '#1B1B1B', fontSize: { xs: '1.2rem', md: '1.5em' }, fontFamily: 'RammettoOne', width: '100%', textAlign: 'center' }}>
             All about delivering
-            <TextBubble style={{ zIndex: 1 }} text="top-notch" fontFamily='RammettoOne'/>
+            <TextBubble style={{ zIndex: 1 }} text="top-notch" opacity={1} fontFamily='RammettoOne'/>
             work that  <br />
             &nbsp; &nbsp; goes above and beyond expectations
           </Typography>

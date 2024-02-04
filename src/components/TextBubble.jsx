@@ -3,7 +3,7 @@ import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import { width } from '@mui/system';
 
-const TextBubble = ({ text, opacity=0.8, fontFamily="Jost-700" }) => {
+const TextBubble = ({ text, opacity=0.7, fontFamily="Jost-700" }) => {
 
   return (
     <Paper sx={{
