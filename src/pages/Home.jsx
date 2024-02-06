@@ -90,7 +90,7 @@ const Home = () => {
         <Grid item md={1} sx={{ display: { xs: 'none', md: 'block' } }} />
       </Grid>
 
-      <Box height={60} />
+      <Box sx={{ height: { xs: 50, md: 150 } }} />
 
       <Grid container sx={{ display: 'flex', flexDirection: 'row' }}>
         <Grid item md={1} sx={{ display: { xs: 'none', md: 'block' } }} />
@@ -162,7 +162,7 @@ const Home = () => {
         <Grid item md={2} sx={{ display: { xs: 'none', md: 'block' } }} />
       </Grid>
 
-      <Box height={60} />
+      <Box sx={{ height: { xs: 50, md: 150 } }} />
 
       <Grid container sx={{ display: 'flex', flexDirection: 'row', marginTop: '1%' }}>
         <Grid item md={2} sx={{ display: { xs: 'none', md: 'block' } }} />
@@ -199,7 +199,7 @@ const Home = () => {
         </Grid>
         <Grid item md={2} sx={{ display: { xs: 'none', md: 'block' } }} />
       </Grid>
-      <Box height={20} />
+      <Box sx={{ height: { xs: 50, md: 150 } }} />
     </>
   );
 };
