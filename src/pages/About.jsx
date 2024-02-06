@@ -23,7 +23,7 @@ const About = () => {
             Hello, Welcome to Sapt
           </Typography>
 
-          <Typography sx={{ fontFamily: 'Jost', letterSpacing: '2px', wordSpacing: '1px', lineHeight: '40px', textAlign: 'justify', mt: 1 }}>
+          <Typography sx={{ fontFamily: 'Jost-400', letterSpacing: '2px', wordSpacing: '1px', lineHeight: '40px', textAlign: 'justify', mt: 1 }}>
             We're not your typical software consultancy.
             Think of us as your trusty sidekick in the digital realm.
             We're all about fresh ideas and delivering top-quality solutions.
@@ -47,7 +47,7 @@ const About = () => {
             A bit of history
           </Typography>
 
-          <Typography sx={{ fontFamily: 'Jost', letterSpacing: '2px', wordSpacing: '1px', lineHeight: '40px', textAlign: 'justify', mt: 1 }}>
+          <Typography sx={{ fontFamily: 'Jost-400', letterSpacing: '2px', wordSpacing: '1px', lineHeight: '40px', textAlign: 'justify', mt: 1 }}>
             We are two childhood friends who studied together, worked together in our early years and seen the places together.
             Now we are venturing into the world of digital products leveraging our shared experiences to create software solutions
           </Typography>
@@ -214,6 +214,7 @@ const About = () => {
         <Grid item md={2} sx={{ display: { xs: 'none', md: 'block' } }} />
       </Grid>
       <Box height={50} sx={{ backgroundColor: '#E9E6E2' }} />
+      <Box sx={{ height: { xs: 50, md: 150 } }} />
     </>
   );
 };
