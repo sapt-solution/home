@@ -16,11 +16,19 @@ const Contact = () => {
         message: ''
     });
 
+    useEffect(() => {
+        // Scroll to the top of the page whenever the route changes
+        window.scrollTo(0, 0);
+        emailjs.init('jHqKVeq_8LHeo8WEr')
+    }, []);
+
     const [open, setOpen] = useState(false);
     const [notificationData, setNotificationData] = useState({
         text: '',
         severity: 'success'
     });
+
+    const reCaptchaRef = useRef();
 
     const [emailError, setEmailError] = useState('');
 
@@ -50,6 +58,7 @@ const Contact = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        const token = await reCaptchaRef.current.executeAsync();
         if (!validateEmail(formData.email)) {
             setEmailError('Please enter a valid email address');
             setFormData({
@@ -59,9 +68,10 @@ const Contact = () => {
             return;
         }
         emailjs.send('service_glk32jd', 'template_t9j2c4p',
-            { name: formData.name, email: formData.email, subject: formData.subject, message: formData.message })
+            { name: formData.name, email: formData.email, subject: formData.subject, message: formData.message, 'g-recaptcha-response': token })
             .then((result) => {
                 console.log(result.text);
+                console.log(formData.email + "Email ID");
                 setFormData({
                     name: '',
                     email: '',
@@ -69,6 +79,7 @@ const Contact = () => {
                     message: ''
                 });
                 setOpen(true);
+                reCaptchaRef.current.reset();
                 /* setNotificationData({
                     text: 'We have received your idea!',
                     severity: 'success'
@@ -76,6 +87,7 @@ const Contact = () => {
             }, (error) => {
                 console.log(error.text);
                 setOpen(true);
+                reCaptchaRef.current.reset();
                 setNotificationData({
                     text: 'Something went wrong!',
                     severity: 'error'
@@ -84,57 +96,47 @@ const Contact = () => {
     };
 
     return (
-        <> 
-        <Box height={50} sx={{ backgroundColor: "#E9E6E2" }} />
-        <Grid container justify="center" alignItems="center" sx={{display:"flex", flexDirection:"row"}}>
-        <Grid item md={3}></Grid>
-        <Grid item md={6} alignItems="center" justifyContent={"center"} sx={{display:"flex", flexDirection:"column",}}>
-        <Paper square={false} sx={{ padding: '4%', m: { xs: '5%', md: '0' } }}>
-            <Typography sx={{ color: '#4D69FF', fontSize: '5rem', fontFamily: 'RammettoOne' }}>
-                Say hi !
-            </Typography>
-            <Typography sx={{ color: '#FFFFF', fontSize: '0.7rem', fontFamily: 'Calibri' }}>
-            Our doors are always open for you!    
-            </Typography>
-            <br />
-            <form>
-            <Typography sx={{ color: '#FFFFF', fontSize: '1rem', fontFamily: 'RammettoOne' }}>
-            I am 
-            <TextField label="Name" 
-                            variant="standard" 
-                            name="name" 
-                            required
-                            value={formData.name}
-                            onChange={handleChange}
-                            fullWidth
-                            sx={{ mt: 2 }} />
-                            <br /><br />
-            My email is 
-            <TextField label="Email"
-                            variant="standard"
-                            name="email"
-                            required
-                            value={formData.email}
-                            onChange={handleChange}
-                            fullWidth
-                            sx={{ mt: 2 }}
-                            error={!!emailError}
-                            helperText={emailError} />
-                            <br /><br /> 
-            My subject for contacting you is 
-            <TextField label="Subject" 
-                            variant="standard" 
-                            name="subject" 
-                            required
-                            value={formData.subject}
-                            onChange={handleChange}
-                            fullWidth
-                            sx={{ mt: 2 }} />
-                            <br /><br />
-            and here is my message:
-            </Typography>
-            <br />
-            <TextField label="Message"
+        <>
+            <Box height={50} sx={{ backgroundColor: "#E9E6E2" }} />
+            <Grid container justify="center" alignItems="center" sx={{ display: "flex", flexDirection: "row" }}>
+                <Grid item md={3}></Grid>
+                <Grid item md={6} sx={{ display: "flex", flexDirection: "column", }}>
+                    <Grid textAlign={"center"}>
+                        <Typography sx={{ color: '#4D69FF', fontSize: '5rem', fontFamily: 'RammettoOne' }}>
+                            Say hi !
+                        </Typography>
+                        <Typography sx={{ color: '#FFFFF', fontSize: '1rem', fontFamily: 'Jost-400' }}>
+                            Our doors are always open for you!
+                        </Typography>
+                    </Grid>
+                        <br />
+                        <form>
+                            <Typography sx={{ color: '#FFFFF', fontSize: '1rem', fontFamily: 'RammettoOne' }}>
+                                I am
+                                <TextField variant="standard"
+                                    name="name"
+                                    required
+                                    value={formData.name}
+                                    onChange={handleChange}
+                                    fullWidth
+                                    sx={{ mt: 2 }} />
+                                <br /><br />
+                                My email is
+                                <TextField
+                                    variant="standard"
+                                    name="email"
+                                    required
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                    fullWidth
+                                    sx={{ mt: 2 }}
+                                    error={!!emailError}
+                                    helperText={emailError} />
+                                <br /><br />
+                                and here is my message:
+                            </Typography>
+                            <br />
+                            <TextField
                                 variant="outlined"
                                 name="message"
                                 required
@@ -144,19 +146,24 @@ const Contact = () => {
                                 rows={4}
                                 fullWidth
                                 sx={{ mt: 2 }} />
-            
-            <Box textAlign="right" sx={{ mt: 2 }}>
+
+                            <Box textAlign="right" sx={{ mt: 2 }}>
                                 <Button onClick={handleSubmit}
                                     variant="contained"
-                                    disabled={!formData.name || !formData.email || !formData.subject || !formData.message}
+                                    disabled={!formData.name || !formData.email || !formData.message}
                                     sx={{ backgroundColor: '#4D69FF', color: 'white', borderRadius: '30px', fontSize: '1em', fontFamily: 'Jost-700', width: '150px', height: '40px' }}>
                                     Submit </Button>
                             </Box>
-            </form>
-            </Paper>
-        </Grid>
-        <Grid item md={3}></Grid>
-        </Grid>
+                            <ReCAPTCHA
+                                sitekey="6Lep3V0pAAAAACf8CQVC_FchKud5jJ3MQUIuayrx"
+                                size="invisible"
+                                ref={reCaptchaRef}
+                            />
+                        </form>
+                    
+                </Grid>
+                <Grid item md={3}></Grid>
+            </Grid>
         </>
     )
 }
