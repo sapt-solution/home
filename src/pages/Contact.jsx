@@ -16,6 +16,14 @@ const Contact = () => {
         message: ''
     });
 
+    const [open, setOpen] = useState(false);
+    const [notificationData, setNotificationData] = useState({
+        text: '',
+        severity: 'success'
+    });
+
+    const [emailError, setEmailError] = useState('');
+
     const handleChange = (e) => {
         setFormData({
             ...formData,
@@ -42,7 +50,6 @@ const Contact = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const token = await reCaptchaRef.current.executeAsync();
         if (!validateEmail(formData.email)) {
             setEmailError('Please enter a valid email address');
             setFormData({
@@ -51,8 +58,8 @@ const Contact = () => {
             });
             return;
         }
-        emailjs.send('service_5l77ejc', 'template_contact_form',
-            { name: formData.name, email: formData.email, subject: formData.subject, message: formData.message, 'g-recaptcha-response': token })
+        emailjs.send('service_glk32jd', 'template_t9j2c4p',
+            { name: formData.name, email: formData.email, subject: formData.subject, message: formData.message })
             .then((result) => {
                 console.log(result.text);
                 setFormData({
@@ -62,15 +69,13 @@ const Contact = () => {
                     message: ''
                 });
                 setOpen(true);
-                reCaptchaRef.current.reset();
-                setNotificationData({
+                /* setNotificationData({
                     text: 'We have received your idea!',
                     severity: 'success'
-                });
+                }); */
             }, (error) => {
                 console.log(error.text);
                 setOpen(true);
-                reCaptchaRef.current.reset();
                 setNotificationData({
                     text: 'Something went wrong!',
                     severity: 'error'
@@ -91,20 +96,22 @@ const Contact = () => {
             <Typography sx={{ color: '#FFFFF', fontSize: '0.7rem', fontFamily: 'Calibri' }}>
             Our doors are always open for you!    
             </Typography>
+            <br />
             <form>
             <Typography sx={{ color: '#FFFFF', fontSize: '1rem', fontFamily: 'RammettoOne' }}>
             I am 
             <TextField label="Name" 
-                            variant="outlined" 
+                            variant="standard" 
                             name="name" 
                             required
                             value={formData.name}
                             onChange={handleChange}
                             fullWidth
                             sx={{ mt: 2 }} />
-            and my email is 
+                            <br /><br />
+            My email is 
             <TextField label="Email"
-                            variant="outlined"
+                            variant="standard"
                             name="email"
                             required
                             value={formData.email}
@@ -112,20 +119,23 @@ const Contact = () => {
                             fullWidth
                             sx={{ mt: 2 }}
                             error={!!emailError}
-                            helperText={emailError} />. 
+                            helperText={emailError} />
+                            <br /><br /> 
             My subject for contacting you is 
             <TextField label="Subject" 
-                            variant="outlined" 
+                            variant="standard" 
                             name="subject" 
                             required
-                            value={formData.name}
+                            value={formData.subject}
                             onChange={handleChange}
                             fullWidth
                             sx={{ mt: 2 }} />
-            and here is my message.
+                            <br /><br />
+            and here is my message:
             </Typography>
             <br />
-            <TextField variant="outlined"
+            <TextField label="Message"
+                                variant="outlined"
                                 name="message"
                                 required
                                 value={formData.message}
@@ -144,7 +154,6 @@ const Contact = () => {
                             </Box>
             </form>
             </Paper>
-            {/*</form><button color="#4D69FF" variant="contained" style={{ borderRadius: '20px', backgroundColor: '#4D69FF', color: 'white', width: '100px' }}>Send</button>*/}
         </Grid>
         <Grid item md={3}></Grid>
         </Grid>
@@ -153,90 +162,3 @@ const Contact = () => {
 }
 
 export default Contact;
-
-
-{/*
-const Contact = () => {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        message: ''
-    });
-    const [open, setOpen] = useState(false);
-    const [emailError, setEmailError] = useState('');
-    const [notificationData, setNotificationData] = useState({
-        text: '',
-        severity: 'success'
-    });
-    const reCaptchaRef = useRef();
-
-    useEffect(() => {
-        // Scroll to the top of the page whenever the route changes
-        window.scrollTo(0, 0);
-        emailjs.init('uMjNpb0Vfb5R8ZIv_')
-    }, []);
-
-    const handleChange = (e) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value
-        });
-
-        if (e.target.name === 'email') {
-            setEmailError('');
-        }
-    };
-
-    const validateEmail = (email) => {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-    };
-
-    const handleClose = (event, reason) => {
-        if (reason === 'clickaway') {
-            return;
-        }
-
-        setOpen(false);
-    };
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        const token = await reCaptchaRef.current.executeAsync();
-        if (!validateEmail(formData.email)) {
-            setEmailError('Please enter a valid email address');
-            setFormData({
-                ...formData,
-                ['email']: ''
-            });
-            return;
-        }
-        emailjs.send('service_5l77ejc', 'template_contact_form',
-            { name: formData.name, email: formData.email, message: formData.message, 'g-recaptcha-response': token })
-            .then((result) => {
-                console.log(result.text);
-                setFormData({
-                    name: '',
-                    email: '',
-                    message: ''
-                });
-                setOpen(true);
-                reCaptchaRef.current.reset();
-                setNotificationData({
-                    text: 'We have received your idea!',
-                    severity: 'success'
-                });
-            }, (error) => {
-                console.log(error.text);
-                setOpen(true);
-                reCaptchaRef.current.reset();
-                setNotificationData({
-                    text: 'Something went wrong!',
-                    severity: 'error'
-                });
-            });
-    };
-   
-}
-
-*/}
