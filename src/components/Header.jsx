@@ -33,8 +33,8 @@ const Header = () => {
           </Box>
         </Grid>
 
-        <Grid item xs={1} sx={{display: {xs: 'none', md: 'block'}}} />
-        <Grid item md={5} xs={7} sx={{display: {md: 'block', xs: 'flex'}, justifyContent:{xs: 'end'}}}>
+        <Grid item xs={2} sx={{display: {xs: 'none', md: 'block'}}} />
+        <Grid item md={4} xs={7} sx={{display: {md: 'block', xs: 'flex'}, justifyContent:{xs: 'end'}}}>
         <List
         sx={{
           display: { xs: 'none', md: 'flex' },
@@ -47,7 +47,6 @@ const Header = () => {
         <Link href="#" underline="none" onClick={() => handleMenuClick('#E9E6E2')}>
           <Typography sx={{ color: '#FFFFFF', fontSize: { sm: '1.0rem', md: '1.0rem', lg: '1.2rem' }, fontFamily: 'Jost' }}>Home</Typography>
         </Link>
-        <Typography sx={{ color: '#FFFFFF', fontSize: { sm: '1.0rem', md: '1.0rem', lg: '1.2rem' }, fontFamily: 'Jost' }}>Our Work</Typography>
         <Link href="#/about" underline="none" onClick={() => handleMenuClick('white')}>
           <Typography sx={{ color: '#FFFFFF', fontSize: { sm: '1.0rem', md: '1.0rem', lg: '1.2rem' }, fontFamily: 'Jost' }}>Who Are We</Typography>
         </Link>
@@ -82,9 +81,6 @@ const Header = () => {
         >
             <ListItemButton component="a" href="#" onClick={() => handleMenuClick('#E9E6E2')}>
             <Typography sx={{ color: '#FFFFFF', fontSize: '1.2rem', fontFamily: 'Jost' }}>Home</Typography>
-            </ListItemButton>
-            <ListItemButton component="a" href="#" onClick={() => handleMenuClick('#E9E6E2')}>
-            <Typography sx={{ color: '#FFFFFF', fontSize: '1.2rem', fontFamily: 'Jost' }}>Our Work</Typography>
             </ListItemButton>
             <ListItemButton component="a" href="#/about" onClick={() => handleMenuClick('white')}>
             <Typography sx={{ color: '#FFFFFF', fontSize: '1.2rem', fontFamily: 'Jost' }}>Who Are We</Typography>
